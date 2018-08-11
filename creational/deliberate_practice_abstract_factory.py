@@ -33,7 +33,8 @@ http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 Provides a way to encapsulate a group of individual factories.
 """
 
-import random
+
+# __Q:  Change this to use a factory, so can even have it show a random animal each time!  P1t180815 P1t180909  P1t181109 P2t190107 P4t200704 P5t270319 P6t570517 rm4.5 tp5
 
 
 class PetShop(object):
@@ -47,16 +48,14 @@ class PetShop(object):
 
     def show_pet(self):
         """Creates and shows a pet using the abstract factory"""
-        spoke = self.pet.speak()
+
         print(f"We have a lovely {self.pet}")
         print(f"It says {self.pet.speak()}")
 
 
 class Pet:
-    def speak(self):
-        return f"NotImplemented-{self}"
-    def __str__(self):
-        return "AbstractPet"
+    def speak(self): return f"NotImplemented-{self}"
+    def __str__(self): return "AbstractPet"
 
 
 class Dog(Pet):
@@ -75,6 +74,10 @@ class Cat(Pet):
 
     def __str__(self):
         return "Cat"
+
+
+# Additional Factories
+
 
 
 # Show pets with various factories
@@ -154,6 +157,9 @@ if __name__ == "__main__":
 #
 # # Additional factories:
 #
+# Make is_random!
+
+
 # # Create a random animal
 # def random_animal():
 #     """Let's be dynamic!"""
